@@ -28,7 +28,7 @@ and workplace addresses of persons involved.
                                                                                                                                                                                                         
 Here's my contribution, my reply to @Ant-ON (#1091). Please forward.                                                                                                                                    
                                                                                                                                                                                                         
-# On issue #1109: not properly connecting                                                                                                                                                               
+# On issue #1091: not properly connecting                                                                                                                                                               
                                                                                                                                                                                                         
 I switched to the `develop` branch. (I also thought that your patch                                                                                                                                     
 was integrated, but when it failed, I wanted to try with a version                                                                                                                                      
