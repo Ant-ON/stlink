@@ -162,7 +162,7 @@ int stlink_flash_loader_init(stlink_t *sl, flash_loader_t *fl) {
     }
 
     // allocate a one page buffer in SRAM right after loader
-    fl->buf_addr = fl->loader_addr + (uint32_t)size;
+    fl->buf_addr = fl->loader_addr + (uint32_t)((size + 7) & ~7);
     ILOG("Successfully loaded flash loader in sram\n");
 
     return(0);
