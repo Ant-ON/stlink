@@ -980,7 +980,7 @@ static inline uint32_t read_flash_sr(stlink_t *sl, unsigned bank) {
     } else if (sl->flash_type == STLINK_FLASH_TYPE_H7) {
         sr_reg = (bank==BANK_1)?FLASH_H7_SR1:FLASH_H7_SR2;
     } else {
-        ELOG("unsupported flash method, abort");
+        ELOG("unsupported flash method, abort\n");
         return(-1);
     }
 
@@ -993,7 +993,7 @@ static inline unsigned int is_flash_busy(stlink_t *sl) {
     unsigned int res;
 
     if ((sl->flash_type == STLINK_FLASH_TYPE_F0) ||
-        (sl->flash_type == STLINK_FLASH_TYPE_F0) ||
+        (sl->flash_type == STLINK_FLASH_TYPE_F1_XL) ||
         (sl->flash_type == STLINK_FLASH_TYPE_L0)) {
         sr_busy_shift = FLASH_SR_BSY;
     } else if (sl->flash_type == STLINK_FLASH_TYPE_F4) {
@@ -1010,7 +1010,7 @@ static inline unsigned int is_flash_busy(stlink_t *sl) {
     } else if (sl->flash_type == STLINK_FLASH_TYPE_H7) {
         sr_busy_shift = FLASH_H7_SR_QW;
     } else {
-        ELOG("unsupported flash method, abort");
+        ELOG("unsupported flash method\n");
         return(-1);
     }
 
